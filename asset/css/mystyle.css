@@ -79,6 +79,8 @@ div.game {
     width: 100%;
     height: 220;
     border: solid 1px;
+    display: flex;
+    justify-content: space-between;
 
 }
 
@@ -100,15 +102,15 @@ div.judul {
 
 .list_transaksi{
 	height: auto;
-	width: 66%;
+	max-width: 66%;
 	/*border: solid 2px;*/
-	margin-left: 15%;
-	text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 .wtt {
   /*height: 470;*/
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(273px, 1fr));
   grid-gap: 30px;
 	width: 100%;
   margin-top: 36px;
@@ -118,7 +120,7 @@ div.judul {
 
 .wts {
 	/*height: 470;*/
-	width: 100%;
+	width: auto;
   /* padding-left: 15%; */
   /* nih gua kasih contoh displat flwx buat anak tolol */
   display: flex;
@@ -135,8 +137,8 @@ div.judul {
 }
 
 .barang1{
-	width: 120;
-	height: 80%;
+	width: 120px;
+	height: auto;
 	text-align: center;
 	word-wrap: break-word;
 	float: left;
@@ -145,25 +147,27 @@ div.judul {
 
 .barang2{
 	float: right;
-	width: 120;
-	height: 80%;
+	width: 120px;
+	height: auto;
 	text-align: center;
 	word-wrap: break-word;
 
 }
 
 .arrow{
-	margin-top: 25%;
+	/* margin-top: 25%;
 	margin-left: 3;
 	height: 5%; 
-	width: 5%;
+  width: 5%; */
+  align-self: center;
 }
 
 .arrow1{
-	margin-top: 25%;
+	/* margin-top: 25%;
 	margin-left: 3;
 	height: 5%; 
-	width: 5%;
+  width: 5%; */
+  align-self: center;
 	transform: rotate(180deg) ;
 }
 
@@ -174,9 +178,9 @@ div.judul {
 }
 
 div.game-wts {
-    width: 152;
+    width: calc(100% / 6 - 20px);
     height: auto;
-    margin: 0 10px;
+    margin: 0 10px 20px;
     /* float: left;
     margin-left: 10px; */
 }
@@ -194,4 +198,22 @@ div.judul-game {
     word-wrap: break-word;
     padding-left: 10;
     padding-right: 10;
+}
+
+
+/* ini namanya media query kontol */
+@media screen and (max-width: 1111px) {
+  div.game-wts {
+    width: calc(100% / 4 - 20px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  div.game-wts {
+    width: calc(100% - 20px);
+  }
+  .list_transaksi{
+    max-width: 100%;
+    padding: 0 30px;
+  }
 }
