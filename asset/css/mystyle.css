@@ -1,0 +1,187 @@
+#container {
+	width: 100%;
+	margin-top: 70px;
+}
+.topnav {
+  overflow: hidden;
+  background-color: #e9e9e9;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 21px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #2196F3;
+  color: white;
+}
+
+.topnav .search-container {
+  float: right;
+}
+
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.topnav .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+  background: #ccc;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav .search-container {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text], .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;  
+  }
+}
+
+div.game {
+    margin: 5px;
+    float: left;
+    width: 282;
+    height: 220;
+    border: solid 1px;
+
+}
+
+div.game:hover {
+    border: 1px solid #777;
+}
+
+div.game img {
+    width: 120;
+    height: auto;
+}
+
+div.judul {
+    padding: 15px;
+    text-align: center;
+    width: 121;
+    word-wrap: break-word;
+}
+
+.list_transaksi{
+	height: auto;
+	width: 66%;
+	/*border: solid 2px;*/
+	margin-left: 15%;
+	text-align: center;
+}
+.wtt {
+	/*height: 470;*/
+	width: 100%;
+	margin-top: 36;
+	/*border: solid 2px;*/
+}
+
+.wts {
+	/*height: 470;*/
+	width: 100%;
+	margin-top: 36;
+	padding-left: 15%;
+	/*border: solid 2px;*/
+}
+
+.pembeli{
+	width: 150;
+	height: 200;
+}
+
+.barang1{
+	width: 120;
+	height: 80%;
+	text-align: center;
+	word-wrap: break-word;
+	float: left;
+
+}
+
+.barang2{
+	float: right;
+	width: 120;
+	height: 80%;
+	text-align: center;
+	word-wrap: break-word;
+
+}
+
+.arrow{
+	margin-top: 25%;
+	margin-left: 3;
+	height: 5%; 
+	width: 5%;
+}
+
+.arrow1{
+	margin-top: 25%;
+	margin-left: 3;
+	height: 5%; 
+	width: 5%;
+	transform: rotate(180deg) ;
+}
+
+.garis-judul {
+	height: 2px;
+	width: 100%;
+	background-color: blue;
+}
+
+div.game-wts {
+    width: 152;
+    height: 270;
+    float: left;
+    margin-left: 10px;
+}
+
+div.game-wts:hover {
+    border: 1px solid #777;
+}
+
+div.game-wts img {
+    width: 100%;
+    height: auto;
+}
+div.judul-game {
+    text-align: center;
+    word-wrap: break-word;
+    padding-left: 10;
+    padding-right: 10;
+}
