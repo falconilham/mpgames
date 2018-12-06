@@ -8,9 +8,16 @@
         <script src="asset/jquery/jquery-3.2.1.min.js"></script>
         <script src="asset/bootstrap/js/bootstrap.min.js"></script>
     
-        <div class="topnav">
+        <div class="topnav" id="mytopnav">
             <a class="active" onclick="reload()" href="">Home</a>
-            <a href="#about">About</a>
+            <a class="dropdown">About
+                <a href="javascript:void(0)" class="dropbtn">Jual/tukar
+                <div class="dropdown-content">
+                    <a href="">asdsa</a>
+                    <a href="">asdas</a>
+                </div>
+                </a>
+            </a></a>
             <a href="#contact">Contact</a>
             <a href="#about" style="float: right;">Login</a>
             <div class="search-container">
@@ -82,7 +89,7 @@
                                     $dbname = "mpgames";
                                     $conn = new mysqli($servername, $username, $password, $dbname);
 
-                                    $sql = "SELECT transaksi_jual.id_jual, game.img, user.nama, game.judul, harga, lokasi FROM transaksi_jual INNER JOIN user on transaksi_jual.id_user = user.id_user LEFT JOIN game ON transaksi_jual.id_game = game.id_game";
+                                    $sql = "SELECT transaksi_jual.id_jual, game.img, user.nama, game.judul, harga, lokasi FROM transaksi_jual INNER JOIN user on transaksi_jual.id_user = user.id_user LEFT JOIN game ON transaksi_jual.id_game = game.id_game LIMIT 6";
                                     
                                     $result = mysqli_query($conn, $sql);
 
@@ -99,7 +106,8 @@
                                 </div>    
                                 <?php } ?> 
                             </div>
-
-
-
-    <script src="asset/js/main.js"></script>
+                            <script src="asset/js/main.js"></script>
+                        </div>
+                    </body>
+                </html>
+    
