@@ -13,7 +13,7 @@ session_start();
 
         <div class="topnav">
             <a class="active" onclick="reload()" href="">Home</a>
-            <a href="#about">Jual/Tukar</a>
+            <a href="#about">Jual</a>
             <?php
                 if (empty($_SESSION['id_user'])){
                     echo '<a href="login.php" style="float: right;">login</a>';
@@ -46,7 +46,7 @@ session_start();
                         $dbname = "mpgames";
                         $conn = new mysqli($servername, $username, $password, $dbname);
 
-                        $sql = "SELECT transaksi_jual.id_jual, game.img, user.nama, game.judul, harga, lokasi FROM transaksi_jual INNER JOIN user on transaksi_jual.id_user = user.id_user LEFT JOIN game ON transaksi_jual.id_game = game.id_game LIMIT 6";
+                        $sql = "SELECT transaksi_jual.id_jual, game.img, user.nama, game.judul, harga, lokasi FROM transaksi_jual INNER JOIN user on transaksi_jual.id_user = user.id_user LEFT JOIN game ON transaksi_jual.id_game = game.id_game";
                                     
                         $result = mysqli_query($conn, $sql);
 
@@ -63,6 +63,16 @@ session_start();
                     </div>
                     <?php } ?>
                 </div>
+                <div class="pagination">
+                    <a href="#">&laquo;</a>
+                    <a href="#">1</a>
+                    <a href="#" class="active">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#">&raquo;</a>
+                </div>
+            </div>
             </div>
             <script src="asset/js/main.js"></script>
         </div>

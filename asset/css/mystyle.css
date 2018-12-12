@@ -262,6 +262,11 @@ div.judul-game {
    height: 457px;
 }
 
+.pagination {
+  display: inline-block;
+  margin-left: 34%;
+}
+
 @media screen and (max-width: 600px) {
   div.game-wts {
     width: calc(100% - 20px);
@@ -269,6 +274,11 @@ div.judul-game {
 .list_transaksi{
     max-width: 100%;
     padding: 0 30px;
+}
+
+.pagination {
+  display: inline-block;
+  margin-left: 0px;
 }
 
 #container {
@@ -325,3 +335,20 @@ div.judul-game {
   height: 2px;
   background-color: black;
 }
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border: 1px solid #4CAF50;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
