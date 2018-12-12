@@ -1,4 +1,5 @@
 <html>
+<body background="img/wallpaper.jpg">
 	<head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="asset/css/bootstrap.min.css">
@@ -15,22 +16,34 @@
 		.card-default {
 			max-width: 500px;
 		}
+		body, html {
+ 		height: 100%;
+  		margin: 0;
+		}
 	</style>
 	<body>
 		<div class="container">
 			<div class="card card-default">
 				<div class="card-header">
-				<h3 class="text-center">Daftar </h3>
+				<h3 class="text-center">Login</h3>
+				<?php
+						if (isset($_GET['error'])) {
+					?>
+						<h4 class="text-center" style="color:red"> Email Atau Password Salah</h4>
+					<?php  
+					}
+					?>
+					
+					<?php
+						if (isset($_GET['harus_login'])) {
+					?>
+						<h4 class="text-center" style="color:red">Anda Harus Login</h4>
+					<?php  
+					}
+					?>
 				</div>
 					<div class="card-body">
-					<form action="proses/daftar.php" method="post">
-
-						<input type="hidden" name="id_buku" value="<?php echo $row['id_buku']; ?>">
-
-						<div class="form-group">
-							<label>Nama Anda</label>
-							<input type="text" class="form-control" name="nama" required/>
-						</div>
+					<form action="proses/login.php" method="post">
 
 						<div class="form-group">
 							<label>Email</label>
@@ -38,33 +51,12 @@
 						</div>
 						
 						<div class="form-group">
-						  <label>Alamat</label>
-						  <textarea class="form-control" rows="3" id="alamat"></textarea>
-						</div>
-
-						<div class="form-group">
-						  <label>No.HP</label>
-						  <input type="number" class="form-control" name="hp"></textarea>
-						</div>
-						
-
-						<label class="form-group" style="padding-bottom:10px">
-							<label>Jenis Kelamin </label>
-							<p>
-							<select id="kelamin" name="kelamin">
-							  <option value="Pria">Pria</option>
-							  <option value="Wanita">Wanita</option>
-							</select>
-						
-						<div class="form-group">
 							<label>Pilih Password</label>
 							<input type="Password" class="form-control" name="password" required/>
-							<label>Ketik Ulang Password</label>
-							<input type="Password" class="form-control" name="password" required/>
 						</div>
 						
 						
-						<button type="submit" class="btn btn-primary">Daftar</button>
+						<button type="submit" class="btn btn-primary btn-block">Login</button>
 					</form>
 					</div>
 
