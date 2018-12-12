@@ -21,44 +21,71 @@
         </div>
     </header>
     <body>
+
         <div id="container">
             <div class="list_transaksi">
-            <h4>Assassins Creed Odyssey</h4>
+            <?php
+                $id_jual = $_GET['id_jual'];
+                $servername = "localhost";
+                $username = "root";
+                $password = "";
+                $dbname = "mpgames";
+                $conn = new mysqli($servername, $username, $password, $dbname);
+
+                $sql = "SELECT transaksi_jual.id_jual, game.img, game.trailer, user.nama, game.judul, harga, lokasi FROM transaksi_jual INNER JOIN user on transaksi_jual.id_user = user.id_user LEFT JOIN game ON transaksi_jual.id_game = game.id_game where id_jual = '$id_jual'";
+                $result = mysqli_query($conn, $sql);
+                while($row = $result->fetch_assoc()) {      
+            ?>
+            <h4><?php echo $row['judul']; ?></h4>
                 <div id="product">
                     <div id="gambar">
-                        <img src="img/ac.jpg">
+                        <img src="<?php echo $row['img']; ?>">
                     </div>
                     
                     <div id="keterangan">
                         
-                        Harga<h3>RP 300.000</h3>
+                        Harga<h3><?php echo $row['harga']; ?></h3>
 
-                        Penjual<h3>ilham</h3>
-                        Lokasi<h3>Jakarta</h3>
+                        Penjual<h3><?php echo $row['nama']; ?></h3>
+                        Lokasi<h3><?php echo $row['lokasi']; ?></h3>
                         Nomor Telepon <h3>08121212</h3>
                         <input type="checkbox" checked="checked" name="WA" disabled/>Whatsapp Available<br>
                         <input type="checkbox" checked="checked" name="call" disabled/> Call Available
                     </div>
-                    <div class="deskripsi"><h4 style="text-align: center;">Trailer & Description</h4>
+                    <div class="deskripsi"><h4 style="text-align: center;">Trailer</h4>
                     <div class="garis"></div>
-                        <iframe width="350" height="259" src="https://www.youtube.com/embed/s_SJZSAtLBA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    asdasdas
+                        <iframe src="<?php echo $row['trailer']; ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
-                 </div>
+                 </div><?php } ?>
 
                 <div class="rekomendasi">
                 <div class="garis-judul"></div>
                 <h2 style="text-align: center;"> Rekomendasi Game Untuk Anda </h2>
+                <div class="wts">
+                <?php 
+                        $servername = "localhost";
+                        $username = "root";
+                        $password = "";
+                        $dbname = "mpgames";
+                        $conn = new mysqli($servername, $username, $password, $dbname);
+
+                        $sql = "SELECT transaksi_jual.id_jual, game.img, user.nama, game.judul, harga, lokasi FROM transaksi_jual INNER JOIN user on transaksi_jual.id_user = user.id_user LEFT JOIN game ON transaksi_jual.id_game = game.id_game LIMIT 6";
+                                    
+                        $result = mysqli_query($conn, $sql);
+
+                        while($row = $result->fetch_assoc()) { ?>
+                
                 <div class="game-wts" style="margin-top: 2px">
                     <a href="#">
-                        <img src="img/ac.jpg">
+                        <img src="<?php echo $row['img']; ?>">
                         </a>
-                        <div class="judul-game">Assassins Creed
-                            <p>RP 500.000
-                                jakarta
+                        <div class="judul-game"><?php echo $row['judul']; ?>
+                            <p><?php echo $row['harga']; ?>
+                                <?php echo $row['lokasi']; ?>
                     </a></div>
                 </div>
-            </div>
+            <?php } ?>
+            </div></div>
         </div>        
     </body>
 </html>

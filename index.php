@@ -11,7 +11,6 @@
         <div class="topnav">
             <a class="active" onclick="reload()" href="">Home</a>
             <a href="#about">Jual/Tukar</a>
-            <a href="#contact">News</a>
             <a href="login.php" style="float: right;">Login</a>
             <div class="search-container">
                 <form action="/action_page.php">
@@ -26,51 +25,6 @@
     <body>
         <div id="container">
             <div class="list_transaksi">
-                <h4>Want To Trade ( WTT )</h4>
-                <div class="garis-judul"></div>
-                <h4 style="float: none; text-align: right;">Postingan Terbaru</h4>
-                <div class="wtt">
-                    <div class="game">
-                        <div class="barang1">
-                            <img src="img/ac.jpg" class="pembeli">
-                            Assassins Creed Odyssey
-                        </div>
-                        <img src="img/arrow.png" class="arrow1" style="height: 5%; width: 5%">
-                        <img src="img/arrow.png" class="arrow" style="height: 5%; width: 5%">
-                        <div class="barang2">
-                            <img src="img/rdr2.jpg" class="pembeli">
-                            Read Dead Redemption 2
-                        </div>
-                    </div>
-
-                    <div class="game">
-                        <div class="barang1">
-                            <img src="img/ac.jpg" class="pembeli">
-                            Assassins Creed Odyssey
-                        </div>
-                        <img src="img/arrow.png" class="arrow1" style="height: 5%; width: 5%; transform: rotate(180deg) ;">
-                        <img src="img/arrow.png" class="arrow" style="height: 5%; width: 5%">
-                        <div class="barang2">
-                            <img src="img/rdr2.jpg" class="pembeli">
-                            Read Dead Redemption 2
-                        </div>
-                    </div>
-
-                    <div class="game">
-                        <div class="barang1">
-                            <img src="img/op.jpg" class="pembeli">
-                            One Piece Burning Blood
-                        </div>
-                        <img src="img/arrow.png" class="arrow" style="height: 5%; width: 5%; transform: rotate(180deg) ;">
-                        <img src="img/arrow.png" class="arrow" style="height: 5%; width: 5%">
-                        <div class="barang2">
-                            <img src="img/rdr2.jpg" class="pembeli">
-                            Read Dead Redemption 2
-                        </div>
-                    </div>
-                </div>
-
-
                 <h4>Want To Sell ( WTS )</h4>
                 <div class="garis-judul"></div>
                 <h4 style="float: none; text-align: right; top: 0">Postingan Terbaru</h4>
@@ -88,7 +42,8 @@
 
                         while($row = $result->fetch_assoc()) { ?>
                     <div class="game-wts">
-                        <a href="#">
+                        <h4 hidden/><?php echo $row['id_jual']; ?></h4>
+                        <a href="product.php?id_jual=<?php echo $row['id_jual']; ?>">
                             <img src="<?php echo $row['img']; ?>">
                         </a>
                         <div class="judul-game"><?php echo $row['judul']; ?>
