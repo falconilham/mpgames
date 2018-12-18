@@ -13,7 +13,7 @@ session_start();
 
         <div class="topnav">
             <a class="active" onclick="reload()" href="">Home</a>
-            <a href="#about">Jual</a>
+            <a href="jual.php">Jual</a>
             <?php
                 if (empty($_SESSION['id_user'])){
                     echo '<a href="login.php" style="float: right;">login</a>';
@@ -76,10 +76,10 @@ session_start();
         
         <div class="footer">
             <div class="footer-column">
-                layanan Pelanggan
+                <text>layanan</text>
                 <ul>
-                    <li>Bantuan</li>
-                    <li>Term And Condition</li>
+                    <li><a href="#">Bantuan</a></li>
+                    <li><a href="#">Term And Condition</a></li>
                 </ul>
             </div>
         </div>    

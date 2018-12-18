@@ -372,9 +372,10 @@ div.judul-game {
   list-style: none;
 }
 
-.footer li{
+.footer li a{
   font-size: small;
   margin: 0 0 9px 0;
+  color: black;
 }
 
 .footer li:hover{

@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "karyawan";
+$dbname = "mpgames";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -10,7 +10,7 @@ if ($conn->connect_error) {
     die("Connection failed: ".$conn->connect_error);
 }
 
-$nama = $_POST['nama'];
+$nama = $_POST[''];
 $divisi = $_POST['divisi'];
 $tmpat_lahir = $_POST['tmpat_lahir'];
 $tnggal_lahir = $_POST['tnggal_lahir'];
