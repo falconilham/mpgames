@@ -56,6 +56,16 @@
                     <div class="garis"></div>
                         <iframe src="<?php echo $row['trailer']; ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
+                    <div class="list-game-product">
+                        <div class="list-game-user">
+                            <img src="img/ilham.jpg">
+                            <div class="nama-user">
+                                Falconilham
+                        </div>
+                        
+                        </div>
+                    </div>
+                    </div>
                  </div><?php } ?>
 
                 <div class="rekomendasi">
