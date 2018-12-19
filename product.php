@@ -57,14 +57,15 @@
                         <iframe src="<?php echo $row['trailer']; ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="list-game-product">
-                        <div class="list-game-user">
-                            <img src="img/ilham.jpg">
-                            <div class="nama-user">
+                        <div class="list-game-foto">
+                            <img src="img/user.png">
+                        </div>
+                        <div class="list-game-nama">
                                 Falconilham
-                        </div>
-                        
-                        </div>
-                    </div>
+                        </div>   
+                        <div class="list-game-harga">
+                                RP 200.000
+                        </div>  
                     </div>
                  </div><?php } ?>
 
@@ -95,7 +96,7 @@
                     </a></div>
                 </div>
             <?php } ?>
-            </div></div>
+            </div>
         </div>        
     </body>
 </html>

@@ -382,20 +382,30 @@ div.judul-game {
     color: black;
 }
 
+.list-game-harga {
+  margin-left: 82%;
+  margin-top : 30px;
+}
+
+.list-game-nama {
+  margin-top: 30px;
+
+}
 .list-game-product {
   width: 100%;
   height: 75px;
   border: 2px solid;
+  display: flex;
 }
 
 .list-game-product:hover {
   background-color: grey;
 }
 
-.list-game-user img{
+.list-game-foto img{
   border-radius: 50%;
-  width: 50px;
-  height: auto;
+  width: 90px;
+  height: 100%;
 }
 
 .nama-user {
